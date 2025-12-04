@@ -1,1 +1,60 @@
-<p>vehicles works!</p>
+<section class="vehicles-section fade-up">
+  <div class="container">
+
+    <!-- TITLE -->
+    <h1 class="section-title text-center">Discover Our Vehicles</h1>
+    <p class="section-subtitle text-center mb-4">
+      Choose from the best deals: hottest offers, promotions, and new arrivals.
+    </p>
+
+    <!-- FILTERS -->
+    <div class="filter-container">
+      <button class="filter-btn" [class.active]="filter === 'all'" (click)="setFilter('all')">All</button>
+      <button class="filter-btn" [class.active]="filter === 'hot'" (click)="setFilter('hot')">🔥 Hottest</button>
+      <button class="filter-btn" [class.active]="filter === 'promo'" (click)="setFilter('promo')">💸 Promo</button>
+      <button class="filter-btn" [class.active]="filter === 'new'" (click)="setFilter('new')">✨ New</button>
+    </div>
+
+    <!-- VEHICLE CARDS -->
+    <div class="vehicle-scroll">
+      <div class="vehicle-card glass-card fade-up delay-1"
+           *ngFor="let car of filteredVehicles"
+           (click)="openPopup(car)">
+
+        <img [src]="car.imageUrl" alt="{{car.name}}" class="vehicle-img" />
+
+        <h4 class="car-name mt-3">{{ car.name }}</h4>
+        <p class="brand">{{ car.brand }}</p>
+
+        <p class="price">
+          From <strong>{{ car.pricePerDay }} €</strong> / day
+        </p>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- POPUP OVERLAY -->
+  <div class="popup-bg" *ngIf="showPopup">
+    <div class="popup-card glass-card fade-up">
+
+      <button class="close-btn" (click)="closePopup()">✖</button>
+
+      <img [src]="selectedCar?.imageUrl" class="popup-img" />
+
+      <h2 class="mt-3">{{ selectedCar?.name }}</h2>
+      <p class="price">{{ selectedCar?.pricePerDay }} € / day</p>
+
+      <button class="btn-purple w-100 mt-3" (click)="rentThisCar()">
+        Rent This Car
+      </button>
+
+      <button class="btn-outline-purple w-100 mt-2" (click)="closePopup()">
+        Find Another Car
+      </button>
+
+    </div>
+  </div>
+
+</section>

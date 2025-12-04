@@ -1,0 +1,14 @@
+.summary-card {
+  position: sticky;
+  top: 90px;
+}
+
+.vehicle-grid-card {
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.vehicle-grid-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-strong);
+}

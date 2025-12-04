@@ -1,0 +1,147 @@
+/* =======================
+   VEHICLES PAGE LAYOUT
+=========================*/
+
+.vehicles-section {
+  padding: 3rem 0;
+}
+
+/* Title styling */
+.section-title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: var(--grey-dark);
+}
+
+.section-subtitle {
+  color: var(--grey-mid);
+}
+
+/* =======================
+   FILTER BUTTONS
+=========================*/
+
+.filter-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 8px 18px;
+  border: 1px solid var(--purple);
+  background: transparent;
+  color: var(--purple-dark);
+  border-radius: 30px;
+  transition: 0.25s ease;
+  font-weight: 600;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+  color: white;
+  border-color: var(--purple-dark);
+  box-shadow: var(--shadow-medium);
+}
+
+/* =======================
+   VEHICLE CARDS SCROLL
+=========================*/
+
+.vehicle-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.vehicle-card {
+  min-width: 260px;
+  border-radius: 16px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.vehicle-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-strong);
+}
+
+.vehicle-img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.car-name {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.brand {
+  color: var(--grey-mid);
+  font-size: 0.9rem;
+}
+
+.price {
+  margin-top: 5px;
+}
+
+/* =======================
+   POPUP MODAL
+=========================*/
+
+.popup-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.popup-card {
+  width: 380px;
+  max-width: 90%;
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  box-shadow: var(--shadow-strong);
+}
+
+.popup-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+/* Close button top right */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--grey-dark);
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.close-btn:hover {
+  background: var(--purple-dark);
+}
