@@ -10,8 +10,13 @@ import { Router } from '@angular/router';
 })
 export class VehiclesComponent {
 
+  // FILTER LOGIC
   filter: 'all' | 'hot' | 'promo' | 'new' = 'all';
   vehicles: Vehicle[] = [];
+
+  // POPUP LOGIC
+  showPopup: boolean = false;
+  selectedCar: Vehicle | null = null;
 
   constructor(
     private vehicleService: VehicleService,
@@ -22,6 +27,7 @@ export class VehiclesComponent {
     this.vehicles = this.vehicleService.getVehicles();
   }
 
+  // FILTERS
   setFilter(type: 'all' | 'hot' | 'promo' | 'new') {
     this.filter = type;
   }
@@ -31,7 +37,25 @@ export class VehiclesComponent {
     return this.vehicles.filter(v => v.tag === this.filter);
   }
 
-  openRentPage(vehicle: Vehicle) {
-    this.router.navigate(['/rent'], { queryParams: { id: vehicle.id } });
+  // ===========================
+  // POPUP FUNCTIONS
+  // ===========================
+
+  openPopup(car: Vehicle) {
+    this.selectedCar = car;
+    this.showPopup = true;
+  }
+
+  closePopup() {
+    this.showPopup = false;
+    this.selectedCar = null;
+  }
+
+  rentThisCar() {
+    if (!this.selectedCar) return;
+
+    this.router.navigate(['/rent-a-car'], {
+      queryParams: { id: this.selectedCar.id }
+    });
   }
 }

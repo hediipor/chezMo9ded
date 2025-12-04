@@ -1,99 +1,135 @@
-/* You can add global styles to this file, and also import other style files */
+/* ================================
+   COLOR PALETTE (GLOBAL THEME)
+   ================================ */
+
 :root {
-  --primary: #7b2ff7;      /* purple */
-  --primary-dark: #5016a8;
-  --accent: #c0c4d6;       /* silver/grey */
-  --bg-dark: #0b0b16;
-  --text-light: #f7f7ff;
-  --card-bg: #151521;
-  --yellow: #ffc928;
+  /* Silver gradient background */
+  --silver-light: #f4f4f7;
+  --silver-mid: #d5d7df;
+  --silver-dark: #b5b7c1;
+
+  /* Purple branding */
+  --purple-light: #b388ff;
+  --purple: #7b2ff7;
+  --purple-dark: #4b1a9a;
+
+  /* Grey / dark elements */
+  --grey-dark: #1a1a1d;
+  --grey-mid: #2e2e33;
+  --grey-light: #3c3c42;
+
+  /* Accent colors */
+  --accent-gold: #ffcb47;
+  --accent-blue: #8ab4ff;
+
+  /* Text colors */
+  --text-dark: #121212;
+  --text-light: #f7f7fa;
+
+  /* Shadows */
+  --shadow-soft: 0 5px 15px rgba(0,0,0,0.08);
+  --shadow-medium: 0 8px 25px rgba(0,0,0,0.15);
+  --shadow-strong: 0 15px 40px rgba(0,0,0,0.25);
 }
 
+/* Background gradient used for all pages */
 body {
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: radial-gradient(circle at top left, #1b1230, #05040a);
-  color: var(--text-light);
+  background: linear-gradient(
+    135deg,
+    var(--silver-light),
+    var(--silver-mid),
+    var(--silver-dark)
+  );
+  background-attachment: fixed;
+  color: var(--text-dark);
+  font-family: "Inter", sans-serif;
 }
+/* ================================
+   BUTTONS
+   ================================ */
 
-/* Reusable helpers */
-.app-main {
-  min-height: 100vh;
-}
-
-.section {
-  padding: 3rem 0;
-}
-
-.section-title {
-  font-weight: 700;
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.section-subtitle {
-  color: #b4b7c9;
-}
-
-/* Cards */
-.glass-card {
-  background: rgba(10, 10, 25, 0.8);
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(16px);
-}
-
-/* Buttons */
-.btn-primary-purple {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  border: none;
-  color: white;
-  font-weight: 600;
-  padding: 0.75rem 1.6rem;
+.btn-purple {
+  background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+  color: white !important;
+  border: none !important;
+  padding: 0.7rem 1.6rem;
   border-radius: 999px;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  font-weight: 600;
+  transition: 0.2s ease;
+  box-shadow: var(--shadow-medium);
 }
 
-.btn-primary-purple:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 12px 25px rgba(123, 47, 247, 0.45);
-  filter: brightness(1.05);
+.btn-purple:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-strong);
 }
 
-/* Simple fade/slide animation */
+/* Purple + dark grey blend */
+.btn-purple-grey {
+  background: linear-gradient(135deg, var(--purple-dark), var(--grey-mid));
+  color: white !important;
+  padding: 0.7rem 1.6rem;
+  border-radius: 30px;
+  border: none;
+  font-weight: 600;
+  transition: 0.2s ease-in-out;
+  box-shadow: var(--shadow-medium);
+}
+
+.btn-purple-grey:hover {
+  background: linear-gradient(135deg, var(--purple), var(--grey-dark));
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-strong);
+}
+
+/* Outline version */
+.btn-outline-purple {
+  border: 2px solid var(--purple);
+  color: var(--purple-dark);
+  background: transparent;
+  padding: 0.6rem 1.4rem;
+  border-radius: 30px;
+  transition: 0.2s ease;
+}
+
+.btn-outline-purple:hover {
+  background: var(--purple);
+  color: white;
+  box-shadow: var(--shadow-medium);
+}
+/* ================================
+   GLASS CARDS (for Vehicles, Rent, Home)
+   ================================ */
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: var(--shadow-medium);
+  transition: 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-strong);
+}
+/* ================================
+   ANIMATIONS
+   ================================ */
+
 .fade-up {
   opacity: 0;
-  transform: translateY(24px);
+  transform: translateY(25px);
   animation: fadeUp 0.8s ease forwards;
 }
 
-.fade-up.delay-1 { animation-delay: 0.1s; }
-.fade-up.delay-2 { animation-delay: 0.2s; }
-.fade-up.delay-3 { animation-delay: 0.3s; }
+.delay-1 { animation-delay: 0.15s; }
+.delay-2 { animation-delay: 0.3s; }
+.delay-3 { animation-delay: 0.45s; }
 
 @keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Horizontal scroll strip */
-.horizontal-scroll {
-  display: flex;
-  gap: 1.5rem;
-  overflow-x: auto;
-  padding-bottom: 1rem;
-  scroll-snap-type: x mandatory;
-}
-
-.horizontal-scroll::-webkit-scrollbar {
-  height: 6px;
-}
-.horizontal-scroll::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 999px;
-}
-.horizontal-scroll > * {
-  scroll-snap-align: start;
+  from { opacity: 0; transform: translateY(25px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
