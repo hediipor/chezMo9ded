@@ -1,0 +1,32 @@
+:root{
+  --silver: #f4f5f7;
+  --purple: #6d28d9;
+  --purple-dark: #5b21b6;
+}
+
+.surface-silver { background: var(--silver); }
+
+.btn-purple{
+  background: var(--purple);
+  border: 1px solid var(--purple);
+  color: #fff;
+  font-weight: 800;
+}
+.btn-purple:hover{
+  background: var(--purple-dark);
+  border-color: var(--purple-dark);
+}
+
+.link-purple{
+  color: var(--purple);
+  text-decoration: none;
+}
+.link-purple:hover{
+  color: var(--purple-dark);
+  text-decoration: underline;
+}
+
+.form-control:focus{
+  border-color: rgba(109,40,217,.6);
+  box-shadow: 0 0 0 .25rem rgba(109,40,217,.15);
+}
