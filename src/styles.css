@@ -1,1 +1,99 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --primary: #7b2ff7;      /* purple */
+  --primary-dark: #5016a8;
+  --accent: #c0c4d6;       /* silver/grey */
+  --bg-dark: #0b0b16;
+  --text-light: #f7f7ff;
+  --card-bg: #151521;
+  --yellow: #ffc928;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: radial-gradient(circle at top left, #1b1230, #05040a);
+  color: var(--text-light);
+}
+
+/* Reusable helpers */
+.app-main {
+  min-height: 100vh;
+}
+
+.section {
+  padding: 3rem 0;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  color: #b4b7c9;
+}
+
+/* Cards */
+.glass-card {
+  background: rgba(10, 10, 25, 0.8);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(16px);
+}
+
+/* Buttons */
+.btn-primary-purple {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.btn-primary-purple:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 25px rgba(123, 47, 247, 0.45);
+  filter: brightness(1.05);
+}
+
+/* Simple fade/slide animation */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.fade-up.delay-1 { animation-delay: 0.1s; }
+.fade-up.delay-2 { animation-delay: 0.2s; }
+.fade-up.delay-3 { animation-delay: 0.3s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Horizontal scroll strip */
+.horizontal-scroll {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+.horizontal-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+}
+.horizontal-scroll > * {
+  scroll-snap-align: start;
+}

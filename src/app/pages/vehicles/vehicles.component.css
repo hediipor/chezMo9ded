@@ -1,0 +1,81 @@
+.vehicles-section {
+  padding: 3rem 0;
+}
+
+.title {
+  color: var(--yellow);
+}
+
+.subtitle {
+  color: var(--accent);
+}
+
+.filter-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 8px 18px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary-dark);
+}
+
+.vehicle-scroll {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+.vehicle-card {
+  min-width: 250px;
+  padding: 1.2rem;
+  border-radius: 16px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(123, 47, 247, 0.4);
+}
+
+.vehicle-img {
+  width: 100%;
+  height: auto;
+}
+
+.car-name {
+  margin-top: 1rem;
+}
+
+.price {
+  margin: 0.5rem 0;
+}
+
+.purple-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.purple-btn:hover {
+  background: var(--primary-dark);
+}
