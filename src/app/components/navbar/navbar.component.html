@@ -1,1 +1,55 @@
-<p>navbar works!</p>
+<nav class="navbar navbar-expand-lg navbar-silver sticky-top border-bottom">
+  <div class="container py-2">
+    <!-- Brand -->
+    <a class="navbar-brand d-flex align-items-center gap-2" routerLink="/">
+      <img src="../../../assets/logo.png" alt="Logo" height="36" class="brand-logo" />
+      <span class="fw-bold brand-text">CarRent</span>
+    </a>
+
+    <!-- Mobile toggle -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#mainNavbar"
+      aria-controls="mainNavbar"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Links -->
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-lg-1">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/vehicles" routerLinkActive="active">Vehicles</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/rent-a-car" routerLinkActive="active">Rent</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact-us" routerLinkActive="active">Contact</a>
+        </li>
+      </ul>
+
+      <!-- Actions -->
+      <div class="d-flex gap-2">
+        <a class="btn btn-purple rounded-pill px-3" routerLink="/signup">
+          <strong>Sign up</strong>
+        </a>
+        <button class="btn btn-outline-purple rounded-pill px-3"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal">
+          Log in
+        </button>
+
+
+      </div>
+    </div>
+  </div>
+</nav>

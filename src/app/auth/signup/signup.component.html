@@ -1,1 +1,32 @@
-<p>signup works!</p>
+<div class="modal fade" id="signupModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content surface-silver border-0 shadow-lg rounded-4">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title fw-bold">Sign up</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body pt-2">
+        <form [formGroup]="form" (ngSubmit)="submit()">
+          <label class="form-label mt-2">Full name</label>
+          <input class="form-control form-control-lg" formControlName="name" placeholder="Your name" />
+
+          <label class="form-label mt-3">Email</label>
+          <input class="form-control form-control-lg" formControlName="email" placeholder="example@mail.com" />
+
+          <label class="form-label mt-3">Password</label>
+          <input type="password" class="form-control form-control-lg" formControlName="password" placeholder="••••••••" />
+
+          <button class="btn btn-purple w-100 rounded-pill py-2 mt-4" type="submit" [disabled]="form.invalid">
+            Create account
+          </button>
+
+          <div class="text-center mt-3">
+            <span class="text-muted">Already have an account?</span>
+            <a href="#" class="link-purple fw-semibold ms-1" (click)="openLogin($event)">Log in</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
