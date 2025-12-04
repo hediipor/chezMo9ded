@@ -5,18 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
-import { MenuComponent } from './pages/menu/menu.component';
-import { CartComponent } from './pages/cart/cart.component';
-import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { VehiclesComponent } from './pages/vehicles/vehicles.component';
+import { RentComponent } from './pages/rent/rent.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { LoginComponent } from './auth/login/login.component';
+import { SignupComponent } from './auth/signup/signup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    MenuComponent,
-    CartComponent,
-    CheckoutComponent
+    VehiclesComponent,
+    RentComponent,
+    ContactComponent,
+    LoginComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
