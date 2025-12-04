@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {HomeComponent} from './pages/home/home.component';
-import {vehiclesComponent} from './pages/vehicles/vehicles.component';
-import {rentComponent} from './pages/rent/rent.component';
-import {contactComponent} from './pages/contact/contact.component';
-import {loginComponent} from './auth/login/login.component';
-import {signupComponent} from './auth/signup/signup.component';
+import {VehiclesComponent} from './pages/vehicles/vehicles.component';
+import {RentComponent} from './pages/rent/rent.component';
+import {ContactComponent} from './pages/contact/contact.component';
+import {LoginComponent} from './auth/login/login.component';
+import {SignupComponent} from './auth/signup/signup.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
-  { path: 'vehicles', component:vehiclesComponent },
-  { path: 'rent-a-car', component:rentComponent },
-  { path: 'contact-us', component:contactComponent },
-  { path: 'login', component:loginComponent },
-  { path: 'signup', component:signupComponent },
+  { path: 'vehicles', component:VehiclesComponent },
+  { path: 'rent-a-car', component:RentComponent },
+  { path: 'contact-us', component:ContactComponent },
+  { path: 'login', component:LoginComponent },
+  { path: 'signup', component:SignupComponent },
   { path: '**', redirectTo: ''}
   ];
 
